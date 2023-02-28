@@ -217,3 +217,15 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
     right: 0;
     text-align: center;
 }
+
+.construction {
+    background: url(../img/uc.png);
+    background-size: 215px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+    padding-top: 220px;
+}
