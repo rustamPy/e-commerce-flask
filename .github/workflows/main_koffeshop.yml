@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'KoffeShop'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_F155B26E9C394CF1816DE92A36EF2DB4 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_AA489F04B4744CC4988E5F117CE740E6 }}
