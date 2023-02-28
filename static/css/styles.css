@@ -76,17 +76,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .container,
-.container-fluid,
-.container-sm,
-.container-md,
-.container-lg,
-.container-xl {
+.container-fluid {
     width: 100%;
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
 
+
+}
+
+.container {
+    max-width: 1100px;
 }
 
 .container-fluid.nav-bar, .nav-bar.container-sm, .nav-bar.container-md, .nav-bar.container-lg, .nav-bar.container-xl {
@@ -182,6 +183,69 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 .d-inline-flex {
     display: inline-flex !important;
+}
+
+.logo {
+    width: 120px;
+}
+
+
+/********** Middle - About - Styles ************/
+.section-title {
+    position: relative;
+    padding: 115px 0 35px 0;
+    text-align: center;
+}
+
+.section-title::after {
+    position: absolute;
+    content: "";
+    width: 2px;
+    height: 100px;
+    top: 0;
+    left: 50%;
+    margin-left: 1px;
+    background: #DA9F5B;
+}
+
+.text-primary {
+    color: #DA9F5B !important;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.pile {
+    padding-bottom: 3rem !important;
+    padding-top: 3rem !important;
+    flex: 0 0 33.33333%;
+    max-width: 33.33333%;
+}
+
+.pile .pic {
+    width: 150%;
+    margin-left: -120px;
+}
+
+.fa {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+
+.bit_space {
+    margin-right: 1rem !important;
+
 }
 
 /********** Footer Styles ************/
