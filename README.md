@@ -12,7 +12,11 @@
 # Week 1:
 * Build About page with split screen
   Example:
-  ![image](https://user-images.githubusercontent.com/35258613/221857525-48017620-835c-4193-ad5a-81c7836847cf.png)
+  ![image](https://user-images.githubusercontent.com/35258613/221924290-2741addd-df8a-4e63-b246-5d8936cae192.png)  
+  ![image](https://user-images.githubusercontent.com/35258613/221924314-933c3ceb-44e6-43d0-afff-0af374f60b04.png)  
+  ![image](https://user-images.githubusercontent.com/35258613/221924413-fac286be-2fe2-4162-96e5-ce1827a3800a.png)
+
+
 
   
 * Starting working on index page.
