@@ -16,6 +16,15 @@
                             <h2 style="margin: 0;">{{ i[1] }}</h2>
                             <p style="margin: 0;">Quantity: {{ i[2] }}</p>
                         </div>
+
+
+                        <div class="price_tag">
+                            <p> AZN </p>
+                            <input class="lcd" type="text" name="price-{{ i[0] }}" id="ro-{{ i[0] }}" value=0
+                                   readonly>
+                        </div>
+
+
                         <div class="coffee_adder">
 
                             <button type="button" class="btn-minus" onclick="decrementValue({{ i[0] }}, {{ i[4] }});">
@@ -25,11 +34,9 @@
                                    min=0 max={{ i[2] | int }} onchange="updatePrice({{ i[0] }}, {{ i[4] }});">
                             <button type="button" class="btn-plus" onclick="incrementValue({{ i[0] }}, {{ i[4] }});">+
                             </button>
-                            <div>
-                                <input class="lcd" type="text" name="price-{{ i[0] }}" id="ro-{{ i[0] }}" value=0
-                                       readonly>
-                            </div>
+
                         </div>
+
                     </div>
                 {% endfor %}
             </div>

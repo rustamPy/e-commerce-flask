@@ -5,8 +5,7 @@ from flask import Flask, render_template, request
 import pyodbc
 
 app = Flask(__name__)
-PWD = os.environ.get('DB_PASSWORD')
-conn_str = "DRIVER={SQL Server}; SERVER=forkoffee.database.windows.net; DATABASE=mydb;UID=drmohm@forkoffee; PWD=" + str(PWD)
+conn_str = "DRIVER={SQL Server}; SERVER=forkoffee.database.windows.net; DATABASE=mydb;UID=drmohm@forkoffee; PWD=Ferum@1313"
 conn = pyodbc.connect(conn_str)
 
 
