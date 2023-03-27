@@ -1,43 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 {% block style %}
-<head>
-    <meta charset="utf-8">
-    <title>{% block title%} {% endblock %} - KOFFE </title>
-    <link rel="icon" href="static/img/title_icon.png" type="image/icon type">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    {% include 'style_ref.html' %}
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %} {% endblock %} - KOFFE </title>
+        <link rel="icon" href="static/img/title_icon.png" type="image/icon type">
+        <script type="text/javascript" src="/static/js/scripts.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&family=Roboto:wght@400;500;700&display=swap"
+              rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        {% include 'style_ref.html' %}
 
 
-</head>
-{%endblock%}
+    </head>
+{% endblock %}
 <body>
-    {% include 'top_nav_ref.html' %}
+{% include 'top_nav_ref.html' %}
 
-    {% block index_carousel%}
-    {% endblock %}
+{% block section %}
+{% endblock %}
 
-    {% block index_about%}
-    {% endblock %}
 
-    {% block index_service%}
-    {% endblock %}
 
-    {% block index_menu%}
+<div class="footer text-white footer_gen position-relative overlay-top">
+    {% block spec %}
     {% endblock %}
-
-    {% block index_reserve%}
+    <p class="text-white author">by <a href="https://github.com/rustamPy"> Rustam Karimov</a></p>
+</div>
+<script>
+    {% block script %}
     {% endblock %}
-
-    {% block header%}
-    {% endblock %}
-
-    {% block section%}
-    {% endblock %}
-    {% include 'foot_ref.html' %}
-    </div>
+</script>
 </body>
 
 </html>

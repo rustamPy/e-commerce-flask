@@ -293,3 +293,81 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
     width: 20%;
     padding-top: 220px;
 }
+
+
+.coffee_menu {
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    width: 200px;
+    height: 300px;
+    flex-direction: column;
+    margin-right: 50px;
+}
+
+.coffee_row {
+    display: flex;
+    flex-direction: row;
+}
+
+.coffee_adder button {
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #04AA6D;
+    border: none;
+    border-radius: 15px;
+}
+
+.coffee_adder button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 1px #666;
+    transform: translateY(1px);
+}
+
+.coffee_adder button:hover {
+    background-color: #3e8e41
+}
+
+.coffee_adder input {
+    width: 40px;
+}
+
+.buy_now {
+    margin: auto;
+    margin-top: 20px;
+}
+
+.buy_now button {
+    padding: 15px 25px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #4a352d;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #f5eddc;
+
+}
+
+.buy_now button:hover {
+    background-color: #5b4136
+}
+
+.buy_now button:active {
+    background-color: #5b4136;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.lcd {
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    width: 70px;
+}

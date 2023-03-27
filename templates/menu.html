@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% block title %} Menu {% endblock %}
+{% block section %}
+    <div class="container">
+        <div class="section-title">
+            <h4 class="text-primary" style="letter-spacing: 5px;">Our Menu</h4>
+            <h1 class="display-4">Please select your coffee</h1>
+        </div>
+        <form action="/menu" method="POST" id="menu-form">
+            <div class="coffee_row">
+                {% for i in items %}
+                    <div class="coffee_menu">
+                        <img src="static\img\{{ i[1] }}.png" alt="Coffee"
+                             style="width: 80px; height: 80px; object-fit: cover; border-radius: 50%; margin-right: 10px;">
+                        <div style="margin-top: 70px; margin-bottom: 20px;">
+                            <h2 style="margin: 0;">{{ i[1] }}</h2>
+                            <p style="margin: 0;">Quantity: {{ i[2] }}</p>
+                        </div>
+                        <div class="coffee_adder">
+
+                            <button type="button" class="btn-minus" onclick="decrementValue({{ i[0] }}, {{ i[4] }});">
+                                -
+                            </button>
+                            <input class="input-box" type="number" id="{{ i[0] }}" name="quantity-{{ i[0] }}" value=0
+                                   min=0 max={{ i[2] | int }} onchange="updatePrice({{ i[0] }}, {{ i[4] }});">
+                            <button type="button" class="btn-plus" onclick="incrementValue({{ i[0] }}, {{ i[4] }});">+
+                            </button>
+                            <div>
+                                <input class="lcd" type="text" name="price-{{ i[0] }}" id="ro-{{ i[0] }}" value=0
+                                       readonly>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+        </form>
+    </div>
+{% endblock %}
+
+{% block spec %}
+    <div class="buy_now">
+        <button form="menu-form" type="submit"> Add to cart</button>
+    </div>
+{% endblock %}
+
+{% block script %}
+    function incrementValue(id, price) {
+    var input = document.getElementById(id);
+    var value = parseInt(input.value, 10);
+    value = isNaN(value) ? 0 : value;
+    if (value < parseInt(input.getAttribute('max'), 10)) {
+    value++;
+    input.value = value;
+    updatePrice(id, price);
+    }
+    }
+
+    function decrementValue(id, price) {
+    var input = document.getElementById(id);
+    var value = parseInt(input.value, 10);
+    value = isNaN(value) ? 0 : value;
+    if (value > parseInt(input.getAttribute('min'), 10)) {
+    value--;
+    input.value = value;
+    updatePrice(id, price);
+    }
+    }
+
+    function updatePrice(id, price) {
+    var input = document.getElementById(id);
+    var quantity = parseInt(input.value, 10);
+    quantity = isNaN(quantity) ? 0 : quantity;
+    var l = document.getElementById("ro-" + id);
+    l.value = (price * quantity).toFixed(2);
+    }
+{% endblock %}
