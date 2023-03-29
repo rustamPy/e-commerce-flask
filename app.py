@@ -54,7 +54,7 @@ def menu():
         return render_template('cart_items.html', items=res)
 
     else:
-        return render_template('menu.html', items=coffee_obj.get_coffee_ls())
+        return render_template('menu.html')
 
 
 # about
