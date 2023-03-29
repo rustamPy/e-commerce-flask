@@ -7,18 +7,16 @@
             <h1 class="display-4">We are here for you</h1>
         </div>
         <div class="coffee_row">
-            {% for i in items %}
-                {% if i[0] > 0 %}
+            {% for k, val in items.items() %}
                     <div class="coffee_menu">
-                        <img src="static\img\{{ i[1] }}.png" alt="Coffee"
+                        <img src="static\img\{{ k }}.png" alt="Coffee"
                              style="width: 80px; height: 80px; object-fit: cover; border-radius: 50%; margin-right: 10px;">
                         <div style="margin-top: 70px; margin-bottom: 20px;">
-                            <h2 style="margin: 0;">{{ i[1] }}</h2>
-                            <p style="margin: 0;">Quantity: {{ i[0] }}</p>
-                            <p> {{ i[2] }}</p>
+                            <h2 style="margin: 0;">{{ k }}</h2>
+                            <p style="margin: 0;">Quantity: {{ val['quantity'] | int }}</p>
+                            <p> {{ val['price'] }}</p>
                         </div>
                     </div>
-                {% endif %}
             {% endfor %}
         </div>
     </div>

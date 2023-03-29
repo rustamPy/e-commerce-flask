@@ -1,7 +1,7 @@
 import urllib.parse
 
 from flask import Flask, render_template, request
-
+from collections import defaultdict
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -26,19 +26,14 @@ with app.app_context():
         price = db.Column(db.Float)
 
 
-    class Cart(db.Model):
-        __tablename__ = 'cart_t'
-        id = db.Column(db.Integer, primary_key=True)
-        name = db.Column(db.String(50))
-        quantity = db.Column(db.Integer)
-        rank = db.Column(db.Integer)
-        price = db.Column(db.Float)
-
-
     class GetCoffee:
         def get_coffee_ls(self):
             coffee_ls = Coffee.query.all()
             return [(i.id, i.name, i.quantity, i.rank, i.price) for i in coffee_ls]
+
+        def get_coffee_name_by_id(self, id):
+            cn = Coffee.query.filter_by(id=id).first()
+            return cn.name
 
 
     coffee_obj = GetCoffee()
@@ -52,7 +47,12 @@ def index():
 @app.route('/menu', methods=['GET', 'POST'])
 def menu():
     if request.method == 'POST':
-        pass
+
+        res = defaultdict(dict)
+        [res[coffee_obj.get_coffee_name_by_id(int(k.split('-')[1]))].update({k.split('-')[0]: float(val)}) for k, val in
+         request.form.to_dict().items() if float(val) != 0]
+        return render_template('cart_items.html', items=res)
+
     else:
         return render_template('menu.html', items=coffee_obj.get_coffee_ls())
 
