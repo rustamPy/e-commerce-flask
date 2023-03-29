@@ -54,7 +54,9 @@ def menu():
         return render_template('cart_items.html', items=res)
 
     else:
-        return render_template('menu.html')
+        coffee_ls = Coffee.query.all()
+        items = [(i.id, i.name, i.quantity, i.rank, i.price) for i in coffee_ls]
+        return render_template('menu.html', items=items)
 
 
 # about
