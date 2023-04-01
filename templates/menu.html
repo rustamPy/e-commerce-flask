@@ -11,39 +11,39 @@
             <div class="coffee_row">
 
                 {% for i in items %}
-                    {% if  i[2] == 0%}
-                    <div class="coffee_menu greyed">
+                    {% if  i[2] == 0 %}
+                        <div class="coffee_menu greyed">
                     {% else %}
-                    <div class="coffee_menu">
+                        <div class="coffee_menu">
                     {% endif %}
-                        <img src="static\img\{{ i[1] }}.png" alt="Coffee"
-                             style="width: 80px; height: 80px; object-fit: cover; border-radius: 50%; margin-right: 10px;">
-                        <div class="price_tag">
+                <img src="static\img\{{ i[1] }}.png" alt="Coffee"
+                     style="width: 80px; height: 80px; object-fit: cover; border-radius: 50%; margin-right: 10px;">
+                <div class="price_tag">
 
-                            PLN <input class="lcd" type="text" name="price-{{ i[0] }}" id="ro-{{ i[0] }}" value=0
-                                       readonly>
-                        </div>
+                    PLN <input class="lcd" type="text" name="price-{{ i[0] }}" id="ro-{{ i[0] }}" value=0
+                               readonly>
+                </div>
 
-                        <div style="margin-top: 3px; margin-bottom: 20px;">
-                            <h2 style="margin: 0;">{{ i[1] }}</h2>
-                        </div>
+                <div style="margin-top: 3px; margin-bottom: 20px;">
+                    <h2 style="margin: 0;">{{ i[1] }}</h2>
+                </div>
 
 
-                        <div class="coffee_adder">
+                <div class="coffee_adder">
 
-                            <button type="button" class="btn-minus" onclick="decrementValue({{ i[0] }}, {{ i[3] }});">
-                                -
-                            </button>
-                            <input class="input-box" type="number" id="{{ i[0] }}" name="quantity-{{ i[0] }}" value=0
-                                   min=0 max={{ i[2] | int }} onchange="updatePrice({{ i[0] }}, {{ i[3] }});">
-                            <button type="button" class="btn-plus" onclick="incrementValue({{ i[0] }}, {{ i[3] }});">+
-                            </button>
+                    <button type="button" class="btn-minus" onclick="decrementValue({{ i[0] }}, {{ i[3] }});">
+                        -
+                    </button>
+                    <input class="input-box" type="number" id="{{ i[0] }}" name="quantity-{{ i[0] }}" value=0
+                           min=0 max={{ i[2] | int }} onchange="updatePrice({{ i[0] }}, {{ i[3] }});">
+                    <button type="button" class="btn-plus" onclick="incrementValue({{ i[0] }}, {{ i[3] }});">+
+                    </button>
 
-                        </div>
+                </div>
 
-                    </div>
+                </div>
                 {% endfor %}
-            </div>
+                </div>
         </form>
 
     </div>
@@ -56,10 +56,9 @@
         </div>
 
         <div class="add_cart">
-            <button form="menu-form" type="submit" name="Buy now"> Buy Now </button>
+            <button form="menu-form" type="submit" name="Buy now"> Buy Now</button>
         </div>
         <div class="image-container">
-            <div class="number"> {{ cart_items | length }}</div>
             <a href="/cart"> <img
                     src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzNiYjAxZDVkYzIyYWI5YmE3MmNmNWJiNGZiMjZiZTkzOGYzN2Y2ZSZjdD1n/3oriO04qxVReM5rJEA/giphy.gif"
                     alt="cart"> </a>
