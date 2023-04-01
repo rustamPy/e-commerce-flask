@@ -8,11 +8,20 @@
 ![brown_logo](https://user-images.githubusercontent.com/35258613/221991685-442a63e1-0237-40db-9a95-834a08da96b7.png)
 
 # Week 1:
-* Build About page with split screen  
-![image](https://user-images.githubusercontent.com/35258613/221992115-03710c94-6c3f-4656-8fce-cbb8c6d41ae0.png)
+* Index page:  
+![image](https://user-images.githubusercontent.com/35258613/229305109-315dbeca-7eb7-488b-aed0-25e5554e05e6.png)
 
+* About page:  
+![image](https://user-images.githubusercontent.com/35258613/229305139-44fb1106-521f-4286-abce-92d9b0d02807.png)
+ 
+* Menu page:  
+![image](https://user-images.githubusercontent.com/35258613/229305162-0b55d058-2d0b-45bc-bc07-a5ae16587402.png)
 
+* Menu > Cart page:  
+![image](https://user-images.githubusercontent.com/35258613/229305221-4ad2215d-b7bc-4e91-a2fc-3b3be0940923.png)
 
+* Menu > Cart page #filling details:
+![image](https://user-images.githubusercontent.com/35258613/229305328-73a02b55-affc-438c-ab39-2d4bbb142eb1.png)
 
-  
-* Starting working on index page.
+* Menu > Cart page #purchased:  
+![image](https://user-images.githubusercontent.com/35258613/229305381-9e03c6c2-d023-401b-bc61-2fd15e606536.png)
