@@ -306,6 +306,9 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
     flex-direction: column;
     margin-right: 50px;
 }
+.coffee_menu.greyed {
+    background-color: #80808075;
+}
 
 .coffee_row {
     display: flex;
@@ -336,12 +339,11 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
     width: 40px;
 }
 
-.buy_now {
-    margin: auto;
-    margin-top: 20px;
+.add_cart {
+    margin-right: 10px;
 }
 
-.buy_now button {
+.add_cart button {
     padding: 15px 25px;
     font-size: 24px;
     text-align: center;
@@ -355,11 +357,11 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 }
 
-.buy_now button:hover {
+.add_cart button:hover {
     background-color: #5b4136
 }
 
-.buy_now button:active {
+.add_cart button:active {
     background-color: #5b4136;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
@@ -369,5 +371,32 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
     background-color: transparent;
     border: none;
     font-size: 30px;
-    width: 70px;
+    width: 90px;
 }
+
+
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.image-container img {
+    display: block;
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+}
+
+.image-container .number {
+    position: absolute;
+    top: -5px;
+    right: 14px;
+    background-color: #ff2424;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    font-weight: bold;
+}
+

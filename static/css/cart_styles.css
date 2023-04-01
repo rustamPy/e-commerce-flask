@@ -1,0 +1,207 @@
+*, *:after, *:before {
+    box-sizing: border-box;
+}
+
+section {
+    width: 90%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/** - DETAILS STYLE - **/
+details {
+    display: block;
+    border-bottom: 1px solid #765429;
+    border-left: 1px solid #765429;
+    border-radius: 3px;
+}
+
+details:first-of-type {
+    border-top: 1px solid #765429;
+}
+
+
+details > div {
+    padding: 2em 2em 0;
+    font-size: 0.875em;
+}
+
+details div dl {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+details div dl div {
+    margin-right: 4em;
+    margin-bottom: 2em;
+}
+
+details div dl dt {
+    font-weight: 700;
+}
+
+/** - SUMMARY STYLE - **/
+summary {
+    background-color: #fff;
+    position: relative;
+    cursor: pointer;
+    padding: 1em 0.5em;
+    list-style: none;
+    border-radius: 10px;
+}
+
+summary div {
+    display: flex;
+    align-items: center;
+}
+
+summary h3 {
+    display: flex;
+    flex-direction: column;
+}
+
+summary strong {
+    font-weight: 700;
+}
+
+summary small {
+    color: #999;
+    font-size: 0.875em;
+}
+
+summary span:last-child {
+    font-weight: 700;
+    margin-left: auto;
+}
+
+summary:focus {
+    outline: none;
+}
+
+summary:hover {
+    background-color: #f8f5f1;
+    border-radius: 3px;
+}
+
+
+summary span:first-child {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 10px;
+    background-color: #f3e1e1;
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1.25em;
+}
+
+summary span img {
+    width: 60px;
+    height: 60px;
+}
+
+.info {
+    border: none;
+    border-bottom: 1px solid #5c4d4738;
+    border-radius: 15px;
+}
+
+.info summary {
+    padding: 15px 25px;
+    margin-top: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #5c4d4738;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #f5eddc;
+}
+
+.info h1 {
+    font-size: 20px;
+}
+
+
+.info label {
+    display: inline-block;
+    width: 140px;
+    text-align: right;
+}
+
+.info {
+    padding: 20px;
+}
+
+.card div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.card div details {
+    width: max-content;
+    border: none;
+    margin-right: 10px;
+
+}
+
+
+.card div summary {
+    background-color: rgba(201, 223, 243, 0.2);
+    border: none;
+    color: rgba(201, 60, 0, 0.22);
+}
+
+
+/* Pop up menu */
+
+.select-button {
+    position: relative;
+    display: inline-block;
+}
+
+.selected-option {
+    padding: 10px;
+    background-color: #ddd;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.options-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 5px;
+    padding: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    list-style: none;
+    display: none;
+}
+
+.options-list li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.options-list li:hover {
+    background-color: #f2f2f2;
+}
+
+.payment_methods img {
+    width: 50px;
+}
+
+.purchase {
+    margin-left: auto;
+    margin-right: auto;
+}
