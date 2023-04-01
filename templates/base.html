@@ -4,25 +4,36 @@
     <head>
         <meta charset="utf-8">
         <title>{% block title %} {% endblock %} - KOFFE </title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/cart_styles.css') }}">
         <link rel="icon" href="static/img/title_icon.png" type="image/icon type">
-        <script type="text/javascript" src="/static/js/scripts.js"></script>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&family=Roboto:wght@400;500;700&display=swap"
               rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-        {% include 'style_ref.html' %}
-
 
     </head>
 {% endblock %}
 <body>
-{% include 'top_nav_ref.html' %}
+<div class="container-fluid nav-bar">
+    <nav class="navbar">
+        <a href="/">
+            <div>
+                <img class="logo" src="/static/img/brown_logo.png"/>
+            </div>
 
+        </a>
+        <div>
+            <div class="navbar-nav">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/about" class="nav-link">About</a>
+                <a href="/menu" class="nav-link">Menu</a>
+                <a href="/contact" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+</div>
 {% block section %}
 {% endblock %}
-
-
 
 <div class="footer text-white footer_gen position-relative overlay-top">
     {% block spec %}

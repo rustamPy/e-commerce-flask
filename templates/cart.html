@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+{% block title %} Menu {% endblock %}
+{% block section %}
+    <div class="container">
+        <div class="section-title">
+            <h4 class="text-primary" style="letter-spacing: 5px;">CART</h4>
+            <h1 class="display-4">We are here for you</h1>
+        </div>
+
+        <form action="/cart" method="POST" id="cart-form">
+            <section>
+                {% for i in items %}
+                    <details>
+                        <summary>
+                            <div>
+				<span style="background-color: transparent;">
+					<img src="static\img\{{ i[1] }}.png" style="border-radius: 10px;">
+				</span>
+                                <h3>
+                                    <strong> {{ i[1] }}</strong>
+                                </h3>
+                                <span> {{ i[4] }}</span>
+                            </div>
+                        </summary>
+                        <div>
+                            <dl>
+                                <div>
+                                    <dt>Price for one:</dt>
+                                    <dd>PLN {{ i[4] / i[3] }}</dd>
+                                </div>
+
+                                <div>
+                                    <dt>Quantity:</dt>
+                                    <dd>x{{ i[3] }}</dd>
+                                </div>
+
+                                <div>
+                                    <dt>Country:</dt>
+                                    <dd>{{ i[2] }}</dd>
+                                </div>
+                            </dl>
+                        </div>
+                    </details>
+                {% endfor %}
+                <details class="info address">
+                    <summary>
+                        <h1> Address Details</h1>
+                    </summary>
+                    <div class="eblock">
+                        <label>Name</label>
+                        <input type="text" maxlength="20" name="uname" required/>
+                    </div>
+                    <div class="eblock">
+                        <label>Surname</label>
+                        <input type="text" maxlength="20" name="usname" required/>
+                    </div>
+
+                    <div class="eblock">
+                        <label>Address</label>
+                        <input type="text" maxlength="20" name="uaddr" required/>
+                    </div>
+
+                    <div class="eblock">
+                        <label>Build. num</label>
+                        <input type="text" maxlength="5" name="ubuildnum" required/>
+                        <label>app. num</label>
+                        <input type="text" maxlength="5" name="uappnum" required style="width: 40px;"/>
+                    </div>
+
+                    <div class="eblock">
+                        <label>Email: </label>
+                        <input type="email" maxlength="30" name="uemail" required/>
+                    </div>
+                </details>
+                <details class="info card">
+                    <summary>
+                        <h1> Payment Details</h1>
+                    </summary>
+                    <div class="payment_methods">
+                        <label>
+                            <input type="radio" name="payment_method" value="gpay">
+                            <img src="/static/img/gpay.png" alt="gpay">
+                        </label>
+                        <label>
+                            <input type="radio" name="payment_method" value="blik">
+                            <img src="/static/img/blik.png" alt="blik">
+                        </label>
+                        <label>
+                            <input type="radio" name="payment_method" value="dcard">
+                            <img src="/static/img/dcard.png" alt="dcard">
+                        </label>
+                    </div>
+
+                </details>
+            </section>
+        </form>
+    </div>
+{% endblock %}
+
+{% block script %}
+    const selectButton = document.querySelector('.select-button');
+    const selectedOption = selectButton.querySelector('.selected-option');
+    const optionsList = selectButton.querySelector('.options-list');
+    const options = optionsList.querySelectorAll('li');
+
+    selectedOption.addEventListener('click', () => {
+    optionsList.style.display = optionsList.style.display === 'none' ? 'block' : 'none';
+    });
+
+    options.forEach(option => {
+    option.addEventListener('click', () => {
+    selectedOption.textContent = option.textContent;
+    optionsList.style.display = 'none';
+    });
+    });
+
+
+{% endblock %}
+
+{% block spec %}
+    <div class="add_cart purchase">
+        <button form="cart-form" type="submit" name="Cart"> Purchase and Order</button>
+    </div>
+{% endblock %}

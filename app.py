@@ -1,42 +1,8 @@
-import urllib.parse
-
 from flask import Flask, render_template, request
 from collections import defaultdict
-from flask_sqlalchemy import SQLAlchemy
+from db import cart_obj, coffee_obj
 
 app = Flask(__name__)
-
-params = urllib.parse.quote_plus(
-    "Driver={SQL Server};Server=forkoffee.database.windows.net;Database=mydb;Uid=drmohm@forkoffee;Pwd=Ferum@1313;")
-conn_str = 'mssql+pyodbc:///?odbc_connect={}'.format(params)
-
-app.config['SECRET_KEY'] = 'supersecret'
-app.config['SQLALCHEMY_DATABASE_URI'] = conn_str
-
-# extensions
-
-db = SQLAlchemy(app)
-with app.app_context():
-    class Coffee(db.Model):
-        __tablename__ = 'coffee_t'
-        id = db.Column(db.Integer, primary_key=True)
-        name = db.Column(db.String(50))
-        quantity = db.Column(db.Integer)
-        rank = db.Column(db.Integer)
-        price = db.Column(db.Float)
-
-
-    class GetCoffee:
-        def get_coffee_ls(self):
-            coffee_ls = Coffee.query.all()
-            return [(i.id, i.name, i.quantity, i.rank, i.price) for i in coffee_ls]
-
-        def get_coffee_name_by_id(self, id):
-            cn = Coffee.query.filter_by(id=id).first()
-            return cn.name
-
-
-    coffee_obj = GetCoffee()
 
 
 @app.route('/', methods=['GET'])
@@ -47,24 +13,32 @@ def index():
 @app.route('/menu', methods=['GET', 'POST'])
 def menu():
     if request.method == 'POST':
-
         res = defaultdict(dict)
-        [res[coffee_obj.get_coffee_name_by_id(int(k.split('-')[1]))].update({k.split('-')[0]: float(val)}) for k, val in
-         request.form.to_dict().items() if float(val) != 0]
-        return render_template('cart_items.html', items=res)
-
+        [res[int(k.split('-')[1])].update({k.split('-')[0]: float(val)}) for k, val in
+         request.form.to_dict().items() if any(k[0] in fl for fl in ['q', 'p']) and float(val) != 0]
+        cart_obj.add_to_cart(res)
+        if 'Cart' in request.form:
+            return render_template('menu.html', items=coffee_obj.get_coffee_ls(), cart_items=cart_obj.get_cart_ls())
+        else:
+            return render_template('cart.html', items=cart_obj.get_cart_ls())
     else:
-        coffee_ls = Coffee.query.all()
-        items = [(i.id, i.name, i.quantity, i.rank, i.price) for i in coffee_ls]
-        return render_template('menu.html', items=items)
+        return render_template('menu.html', items=coffee_obj.get_coffee_ls())
 
 
-# about
+@app.route('/cart', methods=['GET', 'POST'])
+def cart():
+    if request.method == 'POST':
+        [coffee_obj.remove_value_from_db(i[3], i[0]) for i in cart_obj.get_cart_ls()]
+        cart_obj.clear_cart()
+        return render_template('done.html')
+    else:
+        return render_template('cart.html', items=cart_obj.get_cart_ls())
+
+
 @app.route('/about', methods=['GET', 'POST'])
 def about():
     return render_template('about.html')
 
 
 if __name__ == '__main__':
-    from waitress import serve
-    serve(app, host="0.0.0.0", port=8080)
+    app.run(debug=True)

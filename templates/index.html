@@ -1,28 +1,18 @@
-<html>
-<head>
-    {% include 'style_ref.html' %}
-    <title>Home - KAFFE</title>
-    <link rel="icon" href="static/img/title_icon.png" type="image/icon type">
-</head>
-<body>
-<div class="container-fluid nav-bar">
-        <nav class="navbar">
-            <a href="/">
-                <div>
-                    <img  class="logo" src="static/img/brown_logo.png">
-                </div>
-
-            </a>
-            <div>
-                <div class="navbar-nav">
-                    <a href="/" class="nav-link">Home</a>
-                    <a href="/about" class="nav-link">About</a>
-                    <a href="/menu" class="nav-link">Menu</a>
-                    <a href="/contact" class="nav-link">Contact</a>
-                </div>
-            </div>
-        </nav>
+{% extends 'base.html' %}
+{% block title%} About {% endblock %}
+{% block header%}
+<div class="page-header position-relative overlay-bottom">
+    <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
+        <h1 class="display-4 text-white">ABOUT US</h1>
+        <div class="d-inline-flex">
+            <p class="text-white"><a class="text-white" href="/">Home</a></p>
+            <p class="text-white">/</p>
+            <p class="text-white">About Us</p>
+        </div>
     </div>
+</div>
+{% endblock %}
+{% block section %}
 <div class="construction">
 
     <h1> Week 3 </h1>
@@ -37,10 +27,10 @@
         <li>Production</li>
     </ul>
 
-    <h2> Week 1 - Github
-        <a href="https://github.com/rustamPy/e-commerce-flask/tree/week_1" target="_blank"> branch </a>
+    <h2> Week 4 - Github
+        <a href="https://github.com/rustamPy/e-commerce-flask/tree/test_branch" target="_blank"> branch </a>
     </h2>
 </div>
-{% include 'foot_ref.html' %}
+{% endblock %}
 </body>
 </html>
