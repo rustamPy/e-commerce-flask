@@ -9,22 +9,21 @@
 
 # Week 3:
 ## Index page:  
-![image](https://user-images.githubusercontent.com/35258613/229305109-315dbeca-7eb7-488b-aed0-25e5554e05e6.png)
+![image](https://user-images.githubusercontent.com/35258613/229352454-5c49101a-5f10-467a-b78f-9d576a4a1400.png)
+
 
 ## About page:  
-![image](https://user-images.githubusercontent.com/35258613/229305139-44fb1106-521f-4286-abce-92d9b0d02807.png)
+![image](https://user-images.githubusercontent.com/35258613/229352444-83fe99ff-11dd-4e43-bdec-c1245cb54e63.png)
+
  
 ## Menu page:  
-![image](https://user-images.githubusercontent.com/35258613/229327051-e2b6f5b5-6acc-4a7b-a0e8-c31825f4551f.png)
+![image](https://user-images.githubusercontent.com/35258613/229352433-0f19ae6c-e081-4235-ae84-bf67b07020ff.png)
+
 
 ## Menu > Cart page:  
-![image](https://user-images.githubusercontent.com/35258613/229305221-4ad2215d-b7bc-4e91-a2fc-3b3be0940923.png)
+![image](https://user-images.githubusercontent.com/35258613/229352304-8adb9b54-1391-4aff-893f-9f98140e3250.png)
 
-## Menu > Cart page #filling details:
-![image](https://user-images.githubusercontent.com/35258613/229305328-73a02b55-affc-438c-ab39-2d4bbb142eb1.png)
-
-## Menu > Cart page #purchased:  
-![image](https://user-images.githubusercontent.com/35258613/229305381-9e03c6c2-d023-401b-bc61-2fd15e606536.png)
 
 ## Menu > Cart pages #receipt:  
-![image](https://user-images.githubusercontent.com/35258613/229326996-daaa526c-f1f4-45c8-b156-dc056dd930db.png)
+![image](https://user-images.githubusercontent.com/35258613/229352353-42f0bae8-66dd-4386-b7a1-d3c8857e0fac.png)
+
