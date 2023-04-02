@@ -15,7 +15,7 @@
 ![image](https://user-images.githubusercontent.com/35258613/229305139-44fb1106-521f-4286-abce-92d9b0d02807.png)
  
 ## Menu page:  
-![image](https://user-images.githubusercontent.com/35258613/229305162-0b55d058-2d0b-45bc-bc07-a5ae16587402.png)
+![image](https://user-images.githubusercontent.com/35258613/229327051-e2b6f5b5-6acc-4a7b-a0e8-c31825f4551f.png)
 
 ## Menu > Cart page:  
 ![image](https://user-images.githubusercontent.com/35258613/229305221-4ad2215d-b7bc-4e91-a2fc-3b3be0940923.png)
