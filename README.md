@@ -25,3 +25,6 @@
 
 * Menu > Cart page #purchased:  
 ![image](https://user-images.githubusercontent.com/35258613/229305381-9e03c6c2-d023-401b-bc61-2fd15e606536.png)
+
+# Menu > Cart pages #recipe:  
+![image](https://user-images.githubusercontent.com/35258613/229326996-daaa526c-f1f4-45c8-b156-dc056dd930db.png)
