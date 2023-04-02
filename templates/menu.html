@@ -27,12 +27,12 @@
                 </div>
                 <div class="coffee_adder">
 
-                    <button type="button" class="btn-minus" onclick="decrementValue({{ i[0] }}, {{ i[3] }});">
+                    <button type="button" class="btn-minus" onclick="decrementValue({{ i[0] }}, {{ i[3] - i[3] * i[5] / 100 }});">
                         -
                     </button>
                     <input class="input-box" type="number" id="{{ i[0] }}" name="quantity-{{ i[0] }}" value=0
-                           min=0 max={{ i[2] | int }} onchange="updatePrice({{ i[0] }}, {{ i[3] }});">
-                    <button type="button" class="btn-plus" onclick="incrementValue({{ i[0] }}, {{ i[3] }});">+
+                           min=0 max={{ i[2] | int }} onchange="updatePrice({{ i[0] }}, {{ i[3] - i[3] * i[5] / 100 }});">
+                    <button type="button" class="btn-plus" onclick="incrementValue({{ i[0] }}, {{ i[3] - i[3] * i[5] / 100 }});">+
                     </button>
 
                 </div>
@@ -101,6 +101,6 @@
     var quantity = parseInt(input.value, 10);
     quantity = isNaN(quantity) ? 0 : quantity;
     var l = document.getElementById("ro-" + id);
-    l.value = (price * quantity).toFixed(1);
+    l.value = (price * quantity).toFixed(2);
     }
 {% endblock %}

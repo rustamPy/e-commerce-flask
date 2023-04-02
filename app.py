@@ -35,19 +35,19 @@ def cart():
         return render_check(cart_obj.get_cart_ls(), details)
     else:
         items = cart_obj.get_cart_ls()
-        subtotal = sum(item[4] for item in items)
+        subtotal = round(sum(item[4] for item in items), 2)
         tax_rate = 0.1  # 10% tax
-        tax = subtotal * tax_rate
-        total = subtotal + tax
+        tax = round(subtotal * tax_rate, 2)
+        total = round(subtotal + tax)
         return render_template('cart.html', items=items, subtotal=subtotal, tax=tax, total=total, tax_rate=tax_rate)
 
 
 @app.route('/check')
 def render_check(data, details):
-    subtotal = sum(item[4] for item in data)
-    tax_rate = 0.1
-    tax = subtotal * tax_rate
-    total = subtotal + tax
+    subtotal = round(sum(item[4] for item in data), 2)
+    tax_rate = 0.1  # 10% tax
+    tax = round(subtotal * tax_rate, 2)
+    total = round(subtotal + tax)
     cart_obj.clear_cart()
     return render_template('check.html', items=data, subtotal=subtotal, tax=tax, total=total,
                            date=datetime.datetime.now(), **details)

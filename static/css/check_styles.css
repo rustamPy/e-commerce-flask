@@ -1,19 +1,43 @@
 body {
-    background-color: #fffbf2;
+    background-image: url("/static/img/bg_1.jpg");
+}
+
+table {
+    border-collapse: collapse;
+}
+
+
+tr:nth-child(odd) {
+  background-color: #5e361ce0;
+}
+
+tr:nth-child(even) {
+  background-color: #b3886ce0;
+}
+
+td {
+    padding: 5px;
+}
+
+tr, td {
+  border: 2px solid #fffbf2;
 }
 
 .effect {
     position: relative !important;
-    max-width: 800px;
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
     display: flex;
     flex-direction: column;
-    background-image: url(/static/img/check_bg_2.jpg);
+    background-image: url(/static/img/check_bg.png);
     padding-bottom: 100px;
     background-size: cover;
-    background-position: center;
+    background-position: top;
     background-repeat: no-repeat;
+    border: 20px solid #fffbf2;
+    box-shadow: 8px 7px 9px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
 
 }
 
@@ -44,16 +68,9 @@ body {
     display: flex;
     flex-direction: column;
     font-family: 'Varela', sans-serif;
+    color: white;
 }
 
-.content table {
-    border-collapse: collapse;
-}
-
-.content td {
-    border: 1px solid black;
-    padding: 5px;
-}
 
 .content h1 {
     text-align: center;
@@ -70,4 +87,6 @@ p, a {
     font-size: 15px;
     margin: auto;
     display: block;
+    text-decoration: none;
+    color: #fffbf2;
 }

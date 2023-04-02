@@ -12,7 +12,7 @@
 <body>
 <div class="effect">
     <div class="content">
-        <h1>Koffe - Receipt</h1>
+        <h1>Receipt</h1>
         <div class="header">
             <p> BILL </p>
             <p> {{ date }}</p>
@@ -50,6 +50,7 @@
             </tr>
             </tbody>
         </table>
+        <br>
         <table>
             <thead>
             <tr>
@@ -88,14 +89,16 @@
             </tbody>
         </table>
         <h1>Thank you for your purchase</h1>
+        <h1>:)</h1>
     </div>
 </div>
 
 <p id="countdown"></p>
 <a href="/menu"> go manually </a>
+
 <script>
     // Set the number of seconds for the countdown timer
-    var seconds = 10;
+    var seconds = 15;
 
     // Get the HTML element where the countdown will be displayed
     var countdownElement = document.getElementById("countdown");
@@ -115,6 +118,7 @@
         }
     }, 1000); // 1000 milliseconds = 1 second
 </script>
+
 
 </body>
 </html>
