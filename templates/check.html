@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Restaurant Check</title>
+    <link rel="stylesheet" href="/static/css/check_styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Varela&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<div class="effect">
+    <div class="content">
+        <h1>Koffe - Receipt</h1>
+        <div class="header">
+            <p> BILL </p>
+            <p> {{ date }}</p>
+        </div>
+
+        <table>
+            <tbody>
+            <tr>
+                <td>Name</td>
+                <td>{{ uname }}</td>
+            </tr>
+            <tr>
+                <td>Surname</td>
+                <td>{{ usname }}</td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td>{{ uaddr }}</td>
+            </tr>
+            <tr>
+                <td>Build. num</td>
+                <td>{{ ubuildnum }}</td>
+            </tr>
+            <tr>
+                <td>App. num</td>
+                <td>{{ uappnum }}</td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>{{ uemail }}</td>
+            </tr>
+            <tr>
+                <th>Payment method</th>
+                <td>{{ payment_method }}</td>
+            </tr>
+            </tbody>
+        </table>
+        <table>
+            <thead>
+            <tr>
+                <th>Item</th>
+                <th>Price</th>
+                <th>Quan.</th>
+                <th>Amount</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for item in items %}
+                <tr>
+                    <td>{{ item[1] }}</td>
+                    <td>{{ item[4] / item[3] }}</td>
+                    <td>{{ item[3] }}</td>
+                    <td>{{ item[4] }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <br>
+        <table>
+            <tbody>
+            <tr>
+                <td>Subtotal:</td>
+                <td>{{ subtotal }}</td>
+            </tr>
+            <tr>
+                <td>Tax:</td>
+                <td>{{ tax }}</td>
+            </tr>
+            <tr>
+                <td>Total:</td>
+                <td>{{ total }}</td>
+            </tr>
+            </tbody>
+        </table>
+        <h1>Thank you for your purchase</h1>
+    </div>
+</div>
+
+<p id="countdown"></p>
+<a href="/menu"> go manually </a>
+<script>
+    // Set the number of seconds for the countdown timer
+    var seconds = 10;
+
+    // Get the HTML element where the countdown will be displayed
+    var countdownElement = document.getElementById("countdown");
+
+    // Update the countdown timer every second
+    var countdownInterval = setInterval(function () {
+        // Decrement the seconds variable
+        seconds--;
+
+        // Display the remaining seconds in the HTML element
+        countdownElement.textContent = "Redirecting back to Our Menu in " + seconds + " seconds...";
+
+        // If the countdown reaches zero, redirect to the new URL
+        if (seconds <= 0) {
+            clearInterval(countdownInterval);
+            window.location.href = "/menu";
+        }
+    }, 1000); // 1000 milliseconds = 1 second
+</script>
+
+</body>
+</html>

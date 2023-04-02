@@ -13,9 +13,9 @@
                     <details>
                         <summary>
                             <div>
-				<span style="background-color: transparent;">
-					<img src="static\img\{{ i[1] }}.png" style="border-radius: 10px;">
-				</span>
+				            <span style="background-color: transparent;">
+					            <img src="static\img\{{ i[1] }}.png" style="border-radius: 10px;">
+				            </span>
                                 <h3>
                                     <strong> {{ i[1] }}</strong>
                                 </h3>
@@ -42,34 +42,46 @@
                         </div>
                     </details>
                 {% endfor %}
+
+                <div class="total_pay">
+                    <div>
+                        <h3> Subtotal: PLN {{'%0.2f' % subtotal|float}}</h3>
+                        <h3> Tax: PLN {{'%0.2f' % tax|float}} ({{ tax_rate * 100 }}%)</h3>
+                    </div>
+                    <div style="text-align: right;">
+                        <h2> Total: </h2>
+                        <h1> PLN {{'%0.2f' % total|float}} </h1>
+                    </div>
+                </div>
+
                 <details class="info address">
                     <summary>
                         <h1> Address Details</h1>
                     </summary>
                     <div class="eblock">
                         <label>Name</label>
-                        <input type="text" maxlength="20" name="uname" required/>
+                        <input type="text" maxlength="20" name="uname"/>
                     </div>
                     <div class="eblock">
                         <label>Surname</label>
-                        <input type="text" maxlength="20" name="usname" required/>
+                        <input type="text" maxlength="20" name="usname"/>
                     </div>
 
                     <div class="eblock">
                         <label>Address</label>
-                        <input type="text" maxlength="20" name="uaddr" required/>
+                        <input type="text" maxlength="20" name="uaddr"/>
                     </div>
 
                     <div class="eblock">
                         <label>Build. num</label>
-                        <input type="text" maxlength="5" name="ubuildnum" required/>
+                        <input type="text" maxlength="5" name="ubuildnum"/>
                         <label>app. num</label>
-                        <input type="text" maxlength="5" name="uappnum" required style="width: 40px;"/>
+                        <input type="text" maxlength="5" name="uappnum" style="width: 40px;"/>
                     </div>
 
                     <div class="eblock">
                         <label>Email: </label>
-                        <input type="email" maxlength="30" name="uemail" required/>
+                        <input type="text" maxlength="30" name="uemail"/>
                     </div>
                 </details>
                 <details class="info card">

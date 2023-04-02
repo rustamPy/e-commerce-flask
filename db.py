@@ -5,6 +5,10 @@ cursor = conn.cursor()
 
 
 def join_coffee_and_cart():
+    """
+    Id - Name - Country - Quantity - Amount
+    :return:
+    """
     return cursor.execute("""
     SELECT coffee_t.id, coffee_t.name, coffee_t.country, cart_t.quantity, cart_t.amount 
     FROM cart_t

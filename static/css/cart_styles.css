@@ -205,3 +205,9 @@ summary span img {
     margin-left: auto;
     margin-right: auto;
 }
+
+.total_pay {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}

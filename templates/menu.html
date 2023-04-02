@@ -18,17 +18,13 @@
                     {% endif %}
                 <img src="static\img\{{ i[1] }}.png" alt="Coffee"
                      style="width: 80px; height: 80px; object-fit: cover; border-radius: 50%; margin-right: 10px;">
-                <div class="price_tag">
-
+                <div>
                     PLN <input class="lcd" type="text" name="price-{{ i[0] }}" id="ro-{{ i[0] }}" value=0
                                readonly>
                 </div>
-
                 <div style="margin-top: 3px; margin-bottom: 20px;">
                     <h2 style="margin: 0;">{{ i[1] }}</h2>
                 </div>
-
-
                 <div class="coffee_adder">
 
                     <button type="button" class="btn-minus" onclick="decrementValue({{ i[0] }}, {{ i[3] }});">
@@ -40,6 +36,16 @@
                     </button>
 
                 </div>
+                {% if i[5] != 0 %}
+                    <div class="price_tag blinking">
+                        <s style=""> {{ i[3] }} </s>
+                        <h3> PLN {{ i[3] - i[3] * i[5] / 100 }} ({{ i[5] }}%) </h3>
+                    </div>
+                {% else %}
+                    <div class="price_tag">
+                        <h3> PLN {{ i[3] }}</h3>
+                    </div>
+                {% endif %}
 
                 </div>
                 {% endfor %}

@@ -294,6 +294,14 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
     padding-top: 220px;
 }
 
+.coffee_row {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
 
 .coffee_menu {
     border-radius: 10px;
@@ -304,16 +312,13 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
     width: 200px;
     height: 300px;
     flex-direction: column;
-    margin-right: 50px;
+    margin-top: 20px;
 }
+
 .coffee_menu.greyed {
     background-color: #80808075;
 }
 
-.coffee_row {
-    display: flex;
-    flex-direction: row;
-}
 
 .coffee_adder button {
     text-align: center;
@@ -374,6 +379,31 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
     width: 90px;
 }
 
+.price_tag {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    margin-top: 50px;
+    box-shadow: inset 2px 3px 8px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    justify-content: center;
+    align-items: center;
+    background-color: #412b2512;
+    overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+
+}
+::-webkit-scrollbar {
+    display: none;
+  }
+
+.price_tag h3 {
+    font-style: oblique;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
 
 .image-container {
     position: relative;
@@ -400,3 +430,20 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
     font-weight: bold;
 }
 
+
+/* BLINKING */
+.blinking h3 {
+    color: red;
+    animation: blink 0.9s infinite;
+}
+
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.hidden {
+    display: none;
+}
